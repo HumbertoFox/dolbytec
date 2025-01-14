@@ -176,10 +176,10 @@ export default function GalleryComponent() {
                 ))}
             </div>
             {isModalOpen && selectedImage && (
-                <div className='fixed w-full min-h-screen inset-0 flex justify-center items-center backdrop-blur-md z-20'>
-                    <div className='relative w-full h-full flex justify-center items-center'>
+                <div className='fixed w-full min-h-screen inset-0 backdrop-blur-md z-20'>
+                    <div className='relative w-full h-full'>
                         <button
-                            className='absolute top-4 right-4 text-red-400 text-2xl hover:text-red-600 duration-300 z-10'
+                            className='absolute top-4 right-6 text-red-400 text-2xl hover:text-red-600 duration-300 z-10'
                             type='button'
                             onClick={closeModal}
                         >
@@ -197,13 +197,15 @@ export default function GalleryComponent() {
                         >
                             {images.map((imgName, index) => (
                                 <SwiperSlide key={index}>
-                                    <Image
-                                        className='w-11/12 h-auto m-auto'
-                                        src={`/images/galeria/${imgName}.jpg`}
-                                        width={800}
-                                        height={800}
-                                        alt={`Imagem ${imgName}`}
-                                    />
+                                    <div className='w-full h-full flex items-center justify-center'>
+                                        <Image
+                                            className='w-11/12 h-auto'
+                                            src={`/images/galeria/${imgName}.jpg`}
+                                            width={800}
+                                            height={800}
+                                            alt={`Imagem ${imgName}`}
+                                        />
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
