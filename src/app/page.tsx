@@ -7,7 +7,7 @@ import StartComponent from '@/components/start';
 
 export default function Home() {
   return (
-    <div className='relative w-full max-w-screen-2xl'>
+    <div className='relative w-full min-w-[375px] max-w-screen-2xl'>
       <HeaderComponent />
       <main className=''>
         <StartComponent />

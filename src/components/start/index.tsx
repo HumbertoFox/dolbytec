@@ -39,16 +39,16 @@ export default function StartComponent() {
     return (
         <section className='relative w-full h-screen flex flex-col-reverse justify-center items-center gap-6 cursor-default md:flex-row'>
             <div className='absolute w-full h-screen bg-[url("/images/img_bg_start.png")] bg-cover opacity-40 -z-10' />
-            <div className='w-full flex justify-center items-center'>
+            <div className='w-full md:w-1/2 flex justify-center items-center'>
                 <Image
-                    className='max-w-[580px] md:w-full opacity-0 start_image'
+                    className='opacity-0 start_image'
                     src='/images/img_start.jpg'
                     alt='Imagem Bancada Dolbytec'
                     width={700}
                     height={700}
                 />
             </div>
-            <div className='w-full flex flex-col justify-center items-center gap-8 text-center'>
+            <div className='w-full md:w-1/2 flex flex-col justify-center items-center gap-8 text-center'>
                 <p className='text-base md:text-2xl opacity-0 start_text'>
                     Reparo de placa de vídeo, notebooks e all In one.
                 </p>

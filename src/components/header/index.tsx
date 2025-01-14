@@ -3,13 +3,19 @@
 import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import {
+    useEffect,
+    useRef
+} from 'react';
 
 export default function HeaderComponent() {
+    const headerRef = useRef(null);
+    const logoRef = useRef(null);
+
     useEffect(() => {
         const handleScroll = () => {
-            const header = document.querySelector('header');
-            const logo = document.querySelector('.logo');
+            const header = headerRef.current;
+            const logo = logoRef.current;
 
             if (window.scrollY > 0) {
                 gsap.to(header, {
@@ -40,15 +46,18 @@ export default function HeaderComponent() {
         };
     }, []);
     return (
-        <header className='w-full max-w-screen-2xl fixed z-10 bg-[#0c101c]'>
+        <header
+            className='w-full max-w-screen-2xl fixed z-10 bg-[#0c101c]'
+            ref={headerRef}
+        >
             <nav className='w-full flex justify-between items-center p-3'>
                 <Link href='#'>
                     <Image
-                        className='logo'
                         src={'/images/Logo_dolbytec.png'}
                         width={120}
                         height={120}
                         alt='Logo Dolbytec'
+                        ref={logoRef}
                     />
                 </Link>
                 <ul className='flex justify-center items-center gap-5'>
@@ -84,7 +93,7 @@ export default function HeaderComponent() {
                             Localização
                         </Link>
                     </li>
-                    <li className='border-b-2 border-b-transparent hover:border-b-2 hover:border-white duration-500'>
+                    <li className='text-sm md:text-base border-b-2 border-b-transparent hover:border-b-2 hover:border-white duration-500'>
                         <Link
                             className='p-3'
                             href='https://www.sistema.dolbytec.com/sistema/index.php/mine'
