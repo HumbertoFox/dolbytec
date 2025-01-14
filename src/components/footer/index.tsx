@@ -4,7 +4,7 @@ import { Instagram } from 'react-feather';
 
 export default function FooterComponent() {
     return (
-        <footer className='flex flex-col-reverse justify-evenly gap-3 text-sm md:text-base pt-2 bg-[#1b1b39] md:flex-row cursor-default'>
+        <footer className='flex flex-col-reverse justify-evenly gap-3 text-sm md:text-base py-2 bg-[#1b1b39] md:flex-row cursor-default'>
             <div className='flex flex-col items-center justify-center'>
                 <p>Desenvolvido por:</p>
                 <Link
